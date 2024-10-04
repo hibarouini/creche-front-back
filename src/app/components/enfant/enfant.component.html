@@ -1,0 +1,76 @@
+<button class="btn-back" (click)="goBack()">Back</button>
+
+<button class="btn-new" (click)="addNew()">Add New</button> <!-- Bouton pour afficher le formulaire -->
+
+<form *ngIf="showForm" (ngSubmit)="onSubmit()"> <!-- Utilisation de *ngIf pour afficher le formulaire -->
+  <div>
+    <label>Nom:</label>
+    <input type="text" [(ngModel)]="enfantModel.nom" name="nom" required>
+  </div>
+  <div>
+    <label>Prénom:</label>
+    <input type="text" [(ngModel)]="enfantModel.prenom" name="prenom" required>
+  </div>
+  <div>
+    <label>Date de Naissance:</label>
+    <input type="date" [(ngModel)]="enfantModel.dateNaissance" name="dateNaissance" required>
+  </div>
+  <div>
+    <label>Date d'Inscription:</label>
+    <input type="date" [(ngModel)]="enfantModel.dateInscription" name="dateInscription" required>
+  </div>
+  <div>
+    <label>Âge:</label>
+    <input type="number" [(ngModel)]="enfantModel.age" name="age" required>
+  </div>
+  <div>
+    <label>Genre:</label>
+    <select [(ngModel)]="enfantModel.genre" name="genre" required>
+      <option value="Masculin">Masculin</option>
+      <option value="Féminin">Féminin</option>
+    </select>
+  </div>
+  <div>
+    <label>Groupe:</label>
+    <input type="text" [(ngModel)]="enfantModel.groupe" name="groupe" required>
+  </div>
+  <button type="submit">{{ selectedEnfant ? 'Mettre à jour' : 'Ajouter' }}</button>
+</form>
+
+<h3>Nombre total d'enfants: {{ nombreEnfants }}</h3>
+
+<h3>Liste des Enfants:</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Prénom</th>
+      <th>Date de Naissance</th>
+      <th>Date d'Inscription</th>
+      <th>Âge</th>
+      <th>Genre</th>
+      <th>Groupe</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let enfant of enfants">
+      <td>{{ enfant.nom }}</td>
+      <td>{{ enfant.prenom }}</td>
+      <td>{{ enfant.dateNaissance | date:'dd/MM/yyyy' }}</td>
+      <td>{{ enfant.dateInscription | date:'dd/MM/yyyy' }}</td>
+      <td>{{ enfant.age }}</td>
+      <td>{{ enfant.genre }}</td>
+      <td>{{ enfant.groupe }}</td>
+      <td>
+        <button class="btn btn-edit" (click)="selectEnfant(enfant)">Modifier</button>
+        <button class="btn btn-delete" (click)="deleteEnfant(enfant.id)">Supprimer</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="col-md-12 mb-3">
+  <input type="text" class="form-control" placeholder="Rechercher par nom" [(ngModel)]="nom">
+  <button class="btn btn-primary mt-2" (click)="searchEnfant()"> Rechercher</button>
+</div>

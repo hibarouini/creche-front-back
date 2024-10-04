@@ -1,0 +1,161 @@
+/* enfant.component.css */
+.btn-back {
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.btn-back:hover {
+  background-color: #e0e0e0;
+}
+
+.btn-new {
+  background-color: #f05462; /* Couleur de fond verte */
+  color: white; /* Couleur du texte blanche */
+  padding: 10px 20px; /* Espacement intérieur */
+  border: none; /* Pas de bordure */
+  border-radius: 5px; /* Coins arrondis */
+  cursor: pointer; /* Curseur de la souris en forme de main */
+  font-size: 16px; /* Taille du texte */
+  transition: background-color 0.3s ease; /* Effet de transition pour le changement de couleur */
+  position: absolute; /* Positionnement absolu */
+  top: 20px; /* Distance du haut de la page */
+  right: 20px; /* Distance du bord droit de la page */
+  z-index: 10; /* Assure que le bouton est au-dessus des autres éléments */
+}
+
+.btn-new:hover {
+  background-color: #f05462; /* Couleur de fond lors du survol */
+}
+
+.btn-new:active {
+  background-color: #f05462; /* Couleur de fond lors du clic */
+}
+
+.btn-new:focus {
+  outline: none; /* Supprimer le contour de focus par défaut */
+}
+
+/* Formulaire d'inscription */
+form {
+  background: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 20px auto; /* Centrer horizontalement */
+  border-radius: 8px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column; /* Pour le centrage vertical des éléments */
+  align-items: center; /* Centrer les éléments horizontalement */
+}
+
+form div {
+  margin-bottom: 15px;
+  width: 100%; /* Assure que les éléments enfants prennent toute la largeur du formulaire */
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #444;
+  width: 100%; /* Assure que le label prenne toute la largeur */
+}
+
+form input, form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  background: #f05462;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px; /* Espace au-dessus du bouton */
+  align-self: center; /* Centrer le bouton */
+}
+
+form button:hover {
+  background: white;
+  color: #f05462;
+  border: 2px solid #f05462;
+}
+
+/* Liste des Enfants */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background: #f05462;
+  color: white;
+}
+
+td {
+  background: white;
+}
+
+tbody tr:hover {
+  background: #f1f1f1;
+}
+.styled-text {
+  color: red;
+  font-weight: bold;
+  font-size: 24px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  border: 2px solid red;
+  padding: 10px;
+  margin: 10px 0;
+  font-family: 'Arial', sans-serif;
+  border-radius: 8px;
+  background-color: #ffe6e6;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+}
+/* styles.css or component-specific CSS file */
+.btn {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 6px 12px;
+  margin: 2px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn-edit {
+  background-color: #007bff; /* Blue */
+  border-color: #007bff;
+}
+
+.btn-edit:hover {
+  background-color: #0056b3; /* Darker blue */
+  border-color: #004085;
+}
+
+.btn-delete {
+  background-color: #dc3545; /* Red */
+  border-color: #dc3545;
+}
+
+.btn-delete:hover {
+  background-color: #c82333; /* Darker red */
+  border-color: #bd2130;
+}
+

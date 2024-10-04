@@ -1,0 +1,44 @@
+/* Container styling */
+.container {
+    margin-top: 20px;
+    padding: 15px;
+  }
+  
+  /* Table styling */
+  .table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+  }
+  
+  .table thead {
+    background-color: #f8f9fa; /* Background color for the header */
+  }
+  
+  .table th {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #dee2e6; /* Border color for table header */
+    font-weight: bold;
+  }
+  
+  .table td {
+    padding: 10px;
+    border-bottom: 1px solid #dee2e6; /* Border color for table rows */
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2; /* Striped rows background color */
+  }
+  
+  .table-striped tbody tr:hover {
+    background-color: #e9ecef; /* Hover background color for rows */
+  }
+  
+  /* Optional: Add some styling for the headings */
+  h2.my-4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #343a40; /* Darker color for headings */
+  }
+  

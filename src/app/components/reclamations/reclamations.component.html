@@ -1,0 +1,47 @@
+<button class="btn-back" (click)="goBack()">Back</button>
+<div class="container">
+    <h2 class="my-4">Liste des Réclamations</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Message</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reclamation of reclamations">
+          <td>{{ reclamation.name }}</td>
+          <td>{{ reclamation.email }}</td>
+          <td>{{ reclamation.message }}</td>
+          <td>
+            <button (click)="editReclamation(reclamation)" class="btn btn-warning btn-sm">Edit</button>
+            <button (click)="deleteReclamation(reclamation.id)" class="btn btn-danger btn-sm">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Formulaire pour éditer une réclamation -->
+    <div *ngIf="selectedReclamation">
+      <h3>Edit Reclamation</h3>
+      <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" formControlName="name" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" formControlName="email" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" formControlName="message" class="form-control"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+        <button type="button" (click)="selectedReclamation = null" class="btn btn-secondary">Cancel</button>
+      </form>
+    </div>
+  </div>
+  

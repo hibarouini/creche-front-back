@@ -1,0 +1,17 @@
+<!-- employe.component.html -->
+<div class="employe-list">
+    <h2>Liste des Employés</h2>
+    <ul>
+      <li *ngFor="let employe of employes">
+        <p><strong>Nom :</strong> {{ employe.nom }}</p>
+        <p><strong>Prénom :</strong> {{ employe.prenom }}</p>
+        <p><strong>Poste :</strong> {{ employe.poste }}</p>
+        <p><strong>Salaire :</strong> {{ employe.salaire | currency }}</p>
+        <p><strong>Email :</strong> {{ employe.email }}</p>
+        <p><strong>Téléphone :</strong> {{ employe.telephone }}</p>
+        <p><strong>Adresse :</strong> {{ employe.adresse }}</p>
+        <p><strong>Groupe :</strong> {{ employe.groupe.nom }}</p>
+      </li>
+    </ul>
+  </div>
+  

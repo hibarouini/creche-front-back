@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    /* CSS inclus directement dans le HTML */
+
+    /* Login Form Styling */
+    .container {
+      margin-top: 30px;
+      max-width: 600px;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .form-control {
+      border-radius: 0.25rem;
+      border: 1px solid #ced4da;
+      padding: 0.75rem 1.25rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .btn-container {
+      text-align: center; /* Centre le bouton */
+      margin-top: 20px;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+      padding: 0.75rem 1.25rem;
+      border-radius: 0.25rem;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #004085;
+    }
+
+    .no-account {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .no-account p {
+      margin: 0;
+      font-size: 0.875rem;
+    }
+
+    .no-account a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .no-account a:hover {
+      text-decoration: underline;
+    }
+
+    .alert-danger {
+      margin-top: 20px;
+      background-color: #f8d7da;
+      border-color: #f5c6cb;
+      color: #721c24;
+      border-radius: 0.25rem;
+      padding: 0.75rem 1.25rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Login</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Email address</label>
+        <input type="email" class="form-control" [(ngModel)]="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" [(ngModel)]="password" name="password" required>
+      </div>
+      <div class="btn-container">
+        <button type="submit" class="btn btn-primary">Login</button>
+      </div>
+
+      <div class="no-account">
+        <p>Pas encore inscrit ? <a routerLink="/register">Inscrivez-vous ici</a></p>
+      </div>
+    </form>
+    <div *ngIf="message" class="alert alert-danger">{{ message }}</div>
+  </div>
+
+</body>
+</html>

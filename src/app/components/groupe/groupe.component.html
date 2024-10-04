@@ -1,0 +1,25 @@
+<div class="groupe-container">
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <label for="nom">Nom du groupe:</label>
+        <input type="text" id="nom" [(ngModel)]="groupe.nom" name="nom" required />
+      </div>
+      
+      <div>
+        <label for="nbEnfants">Nombre d'enfants:</label>
+        <input type="number" id="nbEnfants" [(ngModel)]="groupe.nbEnfants" name="nbEnfants" required />
+      </div>
+  
+      <button type="submit">Enregistrer le groupe</button>
+    </form>
+  
+    <div *ngIf="groupe.EmployeList && groupe.EmployeList.length > 0">
+      <h3>Employés dans ce groupe:</h3>
+      <ul>
+        <li *ngFor="let employe of groupe.EmployeList">
+          {{ employe.nom }} {{ employe.prenom }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  
